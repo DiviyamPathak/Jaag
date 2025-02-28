@@ -1,0 +1,21 @@
+{% block content %}
+        <!-- Content goes here -->
+
+
+    <h1>Map View</h1>
+    <div id="map"></div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([51.505, -0.09], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        var marker = L.marker([51.505, -0.09]).addTo(map)
+            .bindPopup('<b>Hello!</b><br>This is a popup.').openPopup();
+    </script>
+{% endblock %}
