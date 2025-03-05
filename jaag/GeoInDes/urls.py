@@ -5,5 +5,6 @@ app_name = "GeoInDes"
 
 urlpatterns = [
 	path("map/", views.JaagMapView,name='map_view'),
-	path("upload/", views.Jaagmapupload)
+	path("upload/", views.Jaagmapupload),
+	path("testmap/",views.Jaagtestmap)
 ]
